@@ -110,8 +110,7 @@ Keys and values collapse to G heads — one per group.
                                           (paper uses G = 8)
 ```
 
-GQA-1 = MQA. GQA-H = MHA. GQA-8 is the sweet spot the paper demonstrates.
-
+GQA-1 = MQA. GQA-H = MHA. 
 ---
 
 ## 4. The Diff: What Changed in the Algorithm
