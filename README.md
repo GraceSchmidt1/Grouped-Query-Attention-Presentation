@@ -141,6 +141,8 @@ embeddings, and training algorithms (Algs 11–14 in Phuong & Hutter) are
 untouched. GQA is a surgical modification to one parameter set inside one
 sub-algorithm.
 
+<img width="719" height="364" alt="image" src="https://github.com/user-attachments/assets/952bcace-beca-4d2c-93a8-e06b909061ae" />
+
 ---
 
 ## 5. What Stayed the Same (Most of It)
