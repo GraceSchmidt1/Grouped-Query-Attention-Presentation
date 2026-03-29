@@ -308,39 +308,6 @@ That practicality is what drove immediate and universal adoption.
 
 ---
 
-## Discussion Questions
-
-**Question 1**
-
-> In the standard transformer, every attention head has its own key and value
-> projections. GQA reduces the number of key-value heads from H down to G,
-> while keeping H query heads. During inference, why does reducing the number
-> of key-value heads specifically — rather than query heads — improve speed?
-> What is it about keys and values that makes them the bottleneck?
-
-*What this tests:* Whether the audience understands the KV cache — that keys
-and values from every prior token must be stored and reloaded at every decoding
-step, while queries are computed fresh for only the current token. Reducing
-query heads would not shrink the cache at all. Reducing K/V heads does.
-
----
-
-**Question 2**
-
-> The paper converts existing MHA checkpoints to GQA by mean-pooling the key
-> and value heads within each group, then uptraining for 5% of original
-> pretraining steps. Why does GQA work reasonably well even before uptraining
-> (α = 0), while MQA is nearly unusable without it?
-
-*What this tests:* Whether the audience understands that GQA's intermediate
-structure — G groups rather than a single shared head — preserves more of the
-pretrained model's representational capacity. With G=8, each new K/V head is
-an average of only H/8 original heads, staying close to the originals. With
-G=1 (MQA), every query's K/V is an average of all H heads, which collapses
-the structure far more aggressively.
-
----
-
 ## Resource Links
 
 1. **GQA Paper** — https://arxiv.org/abs/2305.13245
